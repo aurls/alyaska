@@ -8,7 +8,7 @@ def createResponse(data):
   response = make_response(data)
 
   response.headers['X-Frame-Options'] = 'DENY'
-  response.headers['X-XSS-Protection'] = '0'
+  response.headers['X-XSS-Protection'] = '1; mode=block'
   response.headers['X-Content-Type-Options'] = 'nosniff'
   response.headers['Referrer-Policy'] = 'strict-origin-when-cross-origin'
   response.headers['Set-Cookie'] = 'SameSite=Strict; Secure; HttpOnly'
